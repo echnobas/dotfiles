@@ -99,11 +99,9 @@ export LANG=en_GB.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-(cat ~/.cache/wal/sequences &)
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 case $(tty) in 
   (/dev/tty[1-9]) ;; 
-              (*) source ~/.cache/wal/colors-tty.sh;;
+              (*) (cat ~/.cache/wal/sequences &);;
 esac
 fpath+=~/.zfunc
 alias dotfiles='/usr/bin/git --git-dir=/home/echnobas/.dotfiles/ --work-tree=/home/echnobas'
