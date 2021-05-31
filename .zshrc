@@ -101,6 +101,12 @@ export LANG=en_GB.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 (cat ~/.cache/wal/sequences &)
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-source ~/.cache/wal/colors-tty.sh
+case $(tty) in 
+  (/dev/tty[1-9]) ;; 
+              (*) source ~/.cache/wal/colors-tty.sh;;
+esac
 fpath+=~/.zfunc
 alias dotfiles='/usr/bin/git --git-dir=/home/echnobas/.dotfiles/ --work-tree=/home/echnobas'
+function term {
+	i3-msg "workspace $1; append_layout /home/echnobas/.i3/terminals.json"
+}
