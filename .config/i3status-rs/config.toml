@@ -1,6 +1,5 @@
 icons = "awesome"
-theme = { name = "modern", overrides = { separator = "" } }
-
+theme = { name = "native", overrides = { separator = "" } }
 
 
 [[block]]
