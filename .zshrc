@@ -105,6 +105,4 @@ case $(tty) in
 esac
 fpath+=~/.zfunc
 alias dotfiles='/usr/bin/git --git-dir=/home/echnobas/.dotfiles/ --work-tree=/home/echnobas'
-function term {
-	i3-msg "workspace $1; append_layout /home/echnobas/.i3/terminals.json"
-}
+alias pacinstall="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
