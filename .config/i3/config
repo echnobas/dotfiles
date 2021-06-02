@@ -134,6 +134,7 @@ bindsym $mod+r mode "resize"
 mode  "Passthrough Mode - Press MOD+F12 to exit" {
         bindsym $mod+F12 mode "default"
 }
+
 bindsym $mod+F12 mode "Passthrough Mode - Press MOD+F12 to exit"
 
 set $mode_gaps Gaps: (o) outer, (i) inner
@@ -180,12 +181,12 @@ bar {
         status_command i3status-rs ~/.config/i3status-rs/config.toml
 	font pango:JetBrains Mono, FontAwesome 11.5
 	position top
+	strip_workspace_numbers yes
 	colors {
-        	#background #222d32
-        	background #222d3280
+        	background         #222d3280
 		focused_workspace  #000000FF #8b0000 #FFFFFF
-		inactive_workspace #FFFFFF00 #862924 #862924
 		urgent_workspace   #FFFFFFFF #0096FF #FFFFFF
+		binding_mode       #2f343aFF #900000 #ffff00
 	}
 }
 
