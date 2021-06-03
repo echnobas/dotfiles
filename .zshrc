@@ -106,3 +106,4 @@ esac
 fpath+=~/.zfunc
 alias dotfiles='/usr/bin/git --git-dir=/home/echnobas/.dotfiles/ --work-tree=/home/echnobas'
 alias pacinstall="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
+alias startx="startx &> /dev/null"

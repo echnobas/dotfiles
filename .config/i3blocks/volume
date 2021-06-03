@@ -1,7 +1,0 @@
-#!/bin/sh
-# while :
-# do
-# 	printf "VOL "`pamixer --get-volume`"\n"
-# 	sleep .5
-# done
-printf "VOL "`pamixer --get-volume`"\n"

@@ -177,13 +177,13 @@ mode "$mode_gaps_outer" {
 
 # i3bar
 bar {
-	i3bar_command i3bar -t
+	i3bar_command i3bar
         status_command i3status-rs ~/.config/i3status-rs/config.toml
 	font pango:JetBrains Mono, FontAwesome 11.5
 	position top
 	strip_workspace_numbers yes
 	colors {
-        	background         #222d3280
+        	background         #222d32
 		focused_workspace  #000000FF #8b0000 #FFFFFF
 		urgent_workspace   #FFFFFFFF #0096FF #FFFFFF
 		binding_mode       #2f343aFF #900000 #ffff00
@@ -192,5 +192,5 @@ bar {
 
 for_window [class=".*"] border pixel 0
 smart_gaps on
-gaps inner 15
-gaps outer 10
+gaps inner 20
+gaps outer -5
