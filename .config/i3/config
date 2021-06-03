@@ -16,7 +16,7 @@ set $refresh_i3status_vol pkill -SIGRTMIN+2 i3blocks
 bindsym Mod4+comma exec --no-startup-id amixer set Master -q 5%- && $refresh_i3status_vol
 bindsym Mod4+period exec --no-startup-id amixer set Master -q 5%+ && $refresh_i3status_vol
 
-bindsym $mod+Return exec --no-startup-id kitty
+bindsym $mod+Return exec --no-startup-id kitty -1
 bindsym $mod+d exec --no-startup-id "rofi -modi drun,run -show drun"
 bindsym Print exec --no-startup-id maim -s | xclip -selection c -t image/png
 
@@ -184,9 +184,6 @@ bar {
 	strip_workspace_numbers yes
 	colors {
         	background         #222d32
-		focused_workspace  #000000FF #8b0000 #FFFFFF
-		urgent_workspace   #FFFFFFFF #0096FF #FFFFFF
-		binding_mode       #2f343aFF #900000 #ffff00
 	}
 }
 
