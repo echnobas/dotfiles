@@ -11,10 +11,8 @@ exec --no-startup-id picom --experimental-backends -b
 # Notifications
 exec --no-startup-id dunst
 
-# Refresh i3blocks VOLUME (defined in ~/.config/i3blocks/config)
-set $refresh_i3status_vol pkill -SIGRTMIN+2 i3blocks 
-bindsym Mod4+comma exec --no-startup-id amixer set Master -q 5%- && $refresh_i3status_vol
-bindsym Mod4+period exec --no-startup-id amixer set Master -q 5%+ && $refresh_i3status_vol
+bindsym Mod4+comma exec --no-startup-id amixer set Master -q 5%-
+bindsym Mod4+period exec --no-startup-id amixer set Master -q 5%+
 
 bindsym $mod+Return exec --no-startup-id kitty -1
 bindsym $mod+d exec --no-startup-id "rofi -modi drun,run -show drun"
@@ -43,12 +41,9 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# Update i3blocks
-set $refresh_i3status_indicator exec --no-startup-id pkill -SIGRTMIN+3 i3blocks
-
 # Split
-bindsym $mod+h split h; $refresh_i3status_indicator
-bindsym $mod+v split v; $refresh_i3status_indicator
+bindsym $mod+h split h
+bindsym $mod+v split v
 
 # Full screen
 bindsym $mod+f fullscreen toggle
