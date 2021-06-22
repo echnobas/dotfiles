@@ -105,4 +105,6 @@ case $(tty) in
 esac
 fpath+=~/.zfunc
 alias dotfiles='/usr/bin/git --git-dir=/home/echnobas/.dotfiles/ --work-tree=/home/echnobas'
-alias pacinstall="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
+alias pacinstall="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+alias pacremove="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
+alias killgrapejuice="WINEPREFIX=~/.local/share/grapejuice/wineprefix wineserver -k"

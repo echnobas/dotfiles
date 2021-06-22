@@ -10,11 +10,13 @@ exec --no-startup-id nm-applet
 exec --no-startup-id picom --experimental-backends -b
 # Notifications
 exec --no-startup-id dunst
+# Conky
+exec --no-startup-id conky -d
 
 bindsym Mod4+comma exec --no-startup-id amixer set Master -q 5%-
 bindsym Mod4+period exec --no-startup-id amixer set Master -q 5%+
 
-bindsym $mod+Return exec --no-startup-id kitty -1
+bindsym $mod+Return exec --no-startup-id kitty
 bindsym $mod+d exec --no-startup-id "rofi -modi drun,run -show drun"
 bindsym Print exec --no-startup-id maim -s | xclip -selection c -t image/png
 
@@ -170,6 +172,15 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
+
 # i3bar
 bar {
 	i3bar_command i3bar
@@ -178,7 +189,12 @@ bar {
 	position top
 	strip_workspace_numbers yes
 	colors {
-        	background         #222d32
+		background           #282828
+		statusline           #d79921
+	        focused_workspace    $aqua $aqua $darkgray
+        	inactive_workspace   $darkgray $darkgray $yellow
+    		active_workspace     $darkgray $darkgray $yellow
+        	urgent_workspace     $red $red $bg
 	}
 }
 
