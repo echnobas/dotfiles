@@ -101,10 +101,7 @@ export LANG=en_GB.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 case $(tty) in 
   (/dev/tty[1-9]) ;; 
-              (*) (cat ~/.cache/wal/sequences &);;
+              (*) (\cat ~/.cache/wal/sequences &);;
 esac
 fpath+=~/.zfunc
-alias dotfiles='/usr/bin/git --git-dir=/home/echnobas/.dotfiles/ --work-tree=/home/echnobas'
-alias pacinstall="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
-alias pacremove="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
-alias killgrapejuice="WINEPREFIX=~/.local/share/grapejuice/wineprefix wineserver -k"
+eval $(thefuck --alias)

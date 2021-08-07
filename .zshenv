@@ -1,3 +1,12 @@
 . "$HOME/.cargo/env"
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+alias dotfiles='/usr/bin/git --git-dir=/home/echnobas/.dotfiles/ --work-tree=/home/echnobas'
+alias pacinstall="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+alias pacremove="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
+alias killgrapejuice="WINEPREFIX=~/.local/share/grapejuice/wineprefix wineserver -k"
+alias rbxfpsunlocker="WINEESYNC=1 WINEFSYNC=1 WINEPREFIX=$HOME/.local/share/grapejuice/wineprefix valgrind wine rbxfpsunlocker.exe"
+alias pls="doas"
+alias archnews="news https://archlinux.org/feeds/news/"
+alias cat="bat"
+alias neofetch="neofetch --w3m --source /usr/share/backgrounds/stallman.jpg --loop"
